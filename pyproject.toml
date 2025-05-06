@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "v3cap"
+dynamic = ["version"]
+description = "reCAPTCHA v3 solver package"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "TanmoyTheBoT", email = "tanmoysarkershuvo@gmail.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "fastapi>=0.115.12",
+    "requests>=2.32.3",
+    "selenium>=4.32.0",
+    "uvicorn>=0.34.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/TanmoyTheBoT/v3cap"
+Issues = "https://github.com/TanmoyTheBoT/v3cap/issues"
+
+[project.scripts]
+v3cap = "v3cap.api:start_server"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["v3cap"]
+
+[tool.setuptools.dynamic]
+version = {attr = "v3cap.version.__version__"}
