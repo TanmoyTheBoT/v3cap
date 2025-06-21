@@ -17,11 +17,12 @@ pip install v3cap
 
 ### Python Package
 ```python
-from v3cap.captcha import get_recaptcha_token
+from v3cap import get_recaptcha_token
 
 token = get_recaptcha_token(
-    site_key="YOUR_RECAPTCHA_SITE_KEY",
-    page_url="https://example.com/page-with-recaptcha"
+    site_key="6LcwvFgrAAAAAG5UjzyiOkNe-3ekjPHJv0FUzeVy",
+    page_url="https://demo-v3cap.vercel.app",
+    action="demo/v3cap"
 )
 print(token)
 ```
@@ -38,7 +39,7 @@ Server runs on http://0.0.0.0:8000
 
 ### API Endpoints
 - `POST /solve_recaptcha/`
-  - Parameters: `site_key`, `page_url`
+  - Parameters: `site_key`, `page_url`, `action`
   - Returns: JSON with token
 
 ### Docker
@@ -49,7 +50,7 @@ docker run -p 8000:8000 v3cap
 
 ## 📋 Requirements
 - Python 3.10+
-- Chrome/Chromium
+- Chrome
 - ChromeDriver
 
 ## ⚠️ Disclaimer

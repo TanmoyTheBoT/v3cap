@@ -1,4 +1,21 @@
-downloaded_files/
+.git/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.idea/
+.vscode/
+*.so
+old/
+cookies.txt
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -173,3 +190,6 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# MyPy cache directory
+.mypy_cache

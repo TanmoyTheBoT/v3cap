@@ -1,24 +1,50 @@
-# Use an official Python image
 FROM python:3.10-slim
 
-# Basic environment setup
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV DISPLAY=:99
+ENV GOOGLE_CHROME_BIN="/usr/bin/google-chrome"
 
-# Install Chrome and essential dependencies only
 RUN apt-get update && apt-get install -y \
-    chromium \
-    chromium-driver \
-    && rm -rf /var/lib/apt/lists/*
+    wget \
+    fonts-liberation \
+    libasound2 \
+    libatk-bridge2.0-0 \
+    libatk1.0-0 \
+    libatspi2.0-0 \
+    libcairo2 \
+    libcups2 \
+    libcurl4 \
+    libdbus-1-3 \
+    libexpat1 \
+    libgbm1 \
+    libglib2.0-0 \
+    libgtk-3-0 \
+    libnspr4 \
+    libnss3 \
+    libpango-1.0-0 \
+    libvulkan1 \
+    libx11-6 \
+    libxcb1 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxext6 \
+    libxfixes3 \
+    libxkbcommon0 \
+    libxrandr2 \
+    xdg-utils \
+    --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
 
-# Create app directory
+RUN wget -q -O chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    apt-get update && apt-get install -y ./chrome.deb && rm chrome.deb
+
+COPY --from=ghcr.io/astral-sh/uv:0.7.3 /uv /uvx /bin/
 WORKDIR /app
-
-# Copy files and install package
 COPY . /app
-RUN pip install --no-cache-dir .
+RUN uv sync --locked  && \ 
+    uv run example/package_example.py
 
-# Expose port and run
 EXPOSE 8000
-CMD ["python", "-m", "v3cap"]
+CMD ["uv", "run", "v3cap"]
+
