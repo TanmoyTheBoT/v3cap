@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/) [![PyPI version](https://badge.fury.io/py/v3cap.svg)](https://badge.fury.io/py/v3cap) [![PyPI Downloads](https://static.pepy.tech/badge/v3cap)](https://pepy.tech/projects/v3cap)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/) [![PyPI version](https://badge.fury.io/py/v3cap.svg?nocache=1)](https://badge.fury.io/py/v3cap) [![PyPI Downloads](https://static.pepy.tech/badge/v3cap)](https://pepy.tech/projects/v3cap)
 
 </div>
 
