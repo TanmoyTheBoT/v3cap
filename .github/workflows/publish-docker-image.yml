@@ -11,7 +11,7 @@ jobs:
     env:
       GHCR_REGISTRY: ghcr.io
       DOCKER_REGISTRY: docker.io
-      IMAGE_NAME: tanmoythebot/test-v3cap
+      IMAGE_NAME: tanmoythebot/v3cap
 
     steps:
     - name: Checkout code
@@ -47,4 +47,4 @@ jobs:
           ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
           
-        platforms: linux/amd64,linux/arm64
+        platforms: linux/amd64
